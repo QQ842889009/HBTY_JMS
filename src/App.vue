@@ -33,8 +33,8 @@ export default {
       console.log("********************");
 
       this.$http({
-        method: "post",
-        url: "plcdata/youhao/stationInfo/allStationInfo", //
+        method: "get",
+        url: "plcdata/tems/plc/stationInfo", //
       })
         .then((res) => {
           console.log(
@@ -42,7 +42,7 @@ export default {
             res
           );
 
-          this.$store.commit("CC", res.all_station_info);
+          this.$store.commit("CC", res);
         })
         .catch((erroe) => {
           console.log("发送数据失败");

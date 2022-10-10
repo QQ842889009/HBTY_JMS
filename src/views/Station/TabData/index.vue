@@ -72,25 +72,70 @@
             align="center"
           >
           </el-table-column>
-          <el-table-column label="回温(℃)" prop="TE12" width="70">
+          <el-table-column
+            label="回温(℃)"
+            prop="TE12"
+            width="70"
+            align="center"
+          >
           </el-table-column>
-          <el-table-column label="总回温(℃)" prop="TE12Z" width="80">
+          <el-table-column
+            label="总回温(℃)"
+            prop="TE12Z"
+            width="80"
+            align="center"
+          >
           </el-table-column>
-          <el-table-column label="供压(MPa)" prop="PT11" width="65">
+          <el-table-column
+            label="供压(bar)"
+            prop="PT11"
+            width="65"
+            align="center"
+          >
           </el-table-column>
 
-          <el-table-column label="除污器后压(MPa)" prop="PT11_FV" width="65">
+          <el-table-column
+            label="除污器后压(bar)"
+            prop="PT11_FV"
+            width="65"
+            align="center"
+          >
           </el-table-column>
-          <el-table-column label="回压(MPa)" prop="PT12" width="65">
+          <el-table-column
+            label="回压(bar)"
+            prop="PT12"
+            width="65"
+            align="center"
+          >
           </el-table-column>
-          <el-table-column label="供水流量(t/h)" prop="FT11" width="95">
+          <el-table-column
+            label="供水流量(t/h)"
+            prop="FT11"
+            width="95"
+            align="center"
+          >
           </el-table-column>
-          <el-table-column label="回水流量(t/h)" prop="FT12" width="95">
+          <el-table-column
+            label="回水流量(t/h)"
+            prop="FT12"
+            width="95"
+            align="center"
+          >
           </el-table-column>
 
-          <el-table-column label="1#电动阀(%)" prop="FV1FB" width="95">
+          <el-table-column
+            label="1#电动阀(%)"
+            prop="FV1FB"
+            width="95"
+            align="center"
+          >
           </el-table-column>
-          <el-table-column label="2#电动阀(%)" prop="FV12FB" width="95">
+          <el-table-column
+            label="2#电动阀(%)"
+            prop="FV12FB"
+            width="95"
+            align="center"
+          >
           </el-table-column>
         </el-table-column>
 
@@ -105,15 +150,20 @@
           </el-table-column>
           <el-table-column label="回温(℃)" prop="TE22" width="70">
           </el-table-column>
-          <el-table-column label="补水后温度(℃)" prop="TE22MP" width="70">
+          <el-table-column
+            label="补水后温度(℃)"
+            prop="TE22MP"
+            width="95"
+            align="center"
+          >
           </el-table-column>
-          <el-table-column label="供压(MPa)" prop="PT21" width="70">
+          <el-table-column label="供压(bar)" prop="PT21" width="70">
           </el-table-column>
-          <el-table-column label="回压(MPa)" prop="PT22" width="70">
+          <el-table-column label="回压(bar)" prop="PT22" width="70">
           </el-table-column>
-          <el-table-column label="泵前压(MPa)" prop="PT22BF" width="80">
+          <el-table-column label="泵前压(bar)" prop="PT22BF" width="80">
           </el-table-column>
-          <el-table-column label="泵后压(MPa)" prop="PT22BL" width="80">
+          <el-table-column label="泵后压(bar)" prop="PT22BL" width="80">
           </el-table-column>
 
           <el-table-column label="供水流量(t/h)" prop="FT21" width="95">
@@ -262,7 +312,7 @@
           </el-table-column>
         </el-table-column>
 
-        <el-table-column label="分支压力(MPa)" align="center">
+        <el-table-column label="分支压力(bar)" align="center">
           <el-table-column
             prop="PT221"
             label="一分支"

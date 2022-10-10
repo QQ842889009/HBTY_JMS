@@ -24,7 +24,7 @@
         <el-table-column
           prop="Station"
           label="换热站名称"
-          width="150"
+          width="180"
           fixed
           align="center"
         >
@@ -37,457 +37,106 @@
             </el-popover>
           </template>
         </el-table-column>
+
         <el-table-column
-          prop="Space"
-          label="面积(w㎡)"
-          width="85"
+          prop="TE11"
+          label="一次供温(℃)"
+          width="120"
           fixed
           align="center"
         >
         </el-table-column>
         <el-table-column
-          prop="Sdate"
-          label="更新日期"
-          width="110"
-          fixed
-          align="center"
-        >
-        </el-table-column>
-
-        <el-table-column
-          prop="Stime"
-          label="更新时间"
-          width="110"
-          fixed
-          align="center"
-        >
-        </el-table-column>
-
-        <el-table-column label="一次网" align="center">
-          <el-table-column
-            prop="TE11"
-            label="供温(℃)"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            label="回温(℃)"
-            prop="TE12"
-            width="70"
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            label="总回温(℃)"
-            prop="TE12Z"
-            width="80"
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            label="供压(bar)"
-            prop="PT11"
-            width="65"
-            align="center"
-          >
-          </el-table-column>
-
-          <el-table-column
-            label="除污器后压(bar)"
-            prop="PT11_FV"
-            width="65"
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            label="回压(bar)"
-            prop="PT12"
-            width="65"
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            label="供水流量(t/h)"
-            prop="FT11"
-            width="95"
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            label="回水流量(t/h)"
-            prop="FT12"
-            width="95"
-            align="center"
-          >
-          </el-table-column>
-
-          <el-table-column
-            label="1#电动阀(%)"
-            prop="FV1FB"
-            width="95"
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            label="2#电动阀(%)"
-            prop="FV12FB"
-            width="95"
-            align="center"
-          >
-          </el-table-column>
-        </el-table-column>
-
-        <el-table-column label="二次网" align="center">
-          <el-table-column
-            prop="TE21"
-            label="供温(℃)"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column label="回温(℃)" prop="TE22" width="70">
-          </el-table-column>
-          <el-table-column
-            label="补水后温度(℃)"
-            prop="TE22MP"
-            width="95"
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column label="供压(bar)" prop="PT21" width="70">
-          </el-table-column>
-          <el-table-column label="回压(bar)" prop="PT22" width="70">
-          </el-table-column>
-          <el-table-column label="泵前压(bar)" prop="PT22BF" width="80">
-          </el-table-column>
-          <el-table-column label="泵后压(bar)" prop="PT22BL" width="80">
-          </el-table-column>
-
-          <el-table-column label="供水流量(t/h)" prop="FT21" width="95">
-          </el-table-column>
-
-          <el-table-column label="电动阀(%)" prop="FV2FB" width="80">
-          </el-table-column>
-          <el-table-column label="1#循环泵(Hz)" prop="BP21FB" width="80">
-            <template slot-scope="scope">
-              <i
-                class="el-icon-loading"
-                v-show="scope.row.BP21FB > 5 && !scope.row.BP21A"
-                style="font-size: 20px; color: #0ff11b; font-weight: 900"
-              ></i>
-              <i
-                class="el-icon-magic-stick"
-                v-show="scope.row.BP21FB < 5 && !scope.row.BP21A"
-                style="font-size: 20px; font-weight: 900"
-                :style="{ color: iconColor }"
-              ></i>
-              <i
-                class="el-icon-s-opportunity"
-                v-show="scope.row.BP21A"
-                style="
-                  font-size: 20px;
-                  color: red;
-                  font-weight: 900;
-                  float: right;
-                "
-              ></i>
-
-              {{ scope.row.BP21FB }}
-            </template>
-          </el-table-column>
-          <el-table-column label="2#循环泵(Hz)" prop="BP22FB" width="80">
-            <template slot-scope="scope">
-              <i
-                class="el-icon-loading"
-                v-show="scope.row.BP22FB > 5 && !scope.row.BP22A"
-                style="font-size: 20px; color: #0ff11b; font-weight: 900"
-              ></i>
-              <i
-                class="el-icon-magic-stick"
-                v-show="scope.row.BP22FB < 5 && !scope.row.BP22A"
-                style="font-size: 20px; font-weight: 900"
-                :style="{ color: iconColor }"
-              ></i>
-              <i
-                class="el-icon-s-opportunity"
-                v-show="scope.row.BP22A"
-                style="
-                  font-size: 20px;
-                  color: red;
-                  font-weight: 900;
-                  float: right;
-                "
-              ></i>
-
-              {{ scope.row.BP22FB }}
-            </template>
-          </el-table-column>
-        </el-table-column>
-
-        <el-table-column label="分支温度(℃)" align="center">
-          <el-table-column
-            prop="TE221"
-            label="一分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-
-          <el-table-column
-            prop="TE222"
-            label="二分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-
-          <el-table-column
-            prop="TE223"
-            label="三分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="TE224"
-            label="四分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="TE225"
-            label="五分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="TE226"
-            label="六分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="TE227"
-            label="七分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="TE228"
-            label="八分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="TE229"
-            label="九分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="TE22A"
-            label="十分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-        </el-table-column>
-
-        <el-table-column label="分支压力(bar)" align="center">
-          <el-table-column
-            prop="PT221"
-            label="一分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-
-          <el-table-column
-            prop="PT222"
-            label="二分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-
-          <el-table-column
-            prop="PT223"
-            label="三分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="PT224"
-            label="四分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="PT225"
-            label="五分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="PT226"
-            label="六分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="PT227"
-            label="七分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="PT228"
-            label="八分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="PT229"
-            label="九分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="PT22A"
-            label="十分支"
-            width="70"
-            fixed
-            align="center"
-          >
-          </el-table-column>
-        </el-table-column>
-        <!-- <el-table-column label="状态" align="center"> -->
-
-        <!-- </el-table-column> -->
-        <el-table-column
-          label="瞬时补水量(t/h)"
-          prop="FT31"
-          width="100"
-          align="center"
-          fixed="right"
-        >
-        </el-table-column>
-
-        <el-table-column
-          label="累计补水量(t)"
-          prop="ZFT31"
-          width="100"
-          align="center"
-          fixed="right"
-        >
-        </el-table-column>
-        <el-table-column
-          label="电量(kwh)"
-          prop="DL"
+          label="一次回温(℃)"
+          prop="TE12"
           width="120"
           align="center"
-          fixed="right"
         >
         </el-table-column>
-        <el-table-column label="泄压阀" prop="XVC" width="70" fixed="right">
-          <template slot-scope="scope">
-            <i
-              class="el-icon-loading"
-              v-if="scope.row.XYVC"
-              style="font-size: 20px; color: #fff; font-weight: 900"
-            ></i>
-            <i
-              class="el-icon-magic-stick"
-              v-else
-              style="font-size: 20px; font-weight: 900"
-              :style="{ color: iconColor }"
-            ></i>
-          </template>
+        <el-table-column
+          label="一次供压(bar)"
+          prop="PT11"
+          width="120"
+          align="center"
+        >
         </el-table-column>
-        <el-table-column label="1#补水泵" prop="MP1C" width="80" fixed="right">
-          <template slot-scope="scope">
-            <i
-              class="el-icon-loading"
-              v-show="scope.row.MP1C && !scope.row.MP1A"
-              style="font-size: 20px; color: #0ff11b; font-weight: 900"
-            ></i>
-            <i
-              class="el-icon-magic-stick"
-              v-show="!scope.row.MP1C && !scope.row.MP1A"
-              style="font-size: 20px; font-weight: 900"
-              :style="{ color: iconColor }"
-            ></i>
-            <i
-              class="el-icon-s-opportunity"
-              v-show="scope.row.MP1A"
-              style="
-                font-size: 20px;
-                color: red;
-                font-weight: 900;
-                float: right;
-              "
-            ></i>
-          </template>
+        <el-table-column
+          label="一次回压(bar)"
+          prop="PT12"
+          width="120"
+          align="center"
+        >
         </el-table-column>
-        <el-table-column label="2#补水泵" prop="MP2C" width="80" fixed="right">
-          <template slot-scope="scope">
-            <i
-              class="el-icon-loading"
-              v-show="scope.row.MP2C && !scope.row.MP2A"
-              style="font-size: 20px; color: #0ff11b; font-weight: 900"
-            ></i>
-            <i
-              class="el-icon-magic-stick"
-              v-show="!scope.row.MP2C && !scope.row.MP2A"
-              style="font-size: 20px; font-weight: 900"
-              :style="{ color: iconColor }"
-            ></i>
-            <i
-              class="el-icon-s-opportunity"
-              v-show="scope.row.MP2A"
-              style="
-                font-size: 20px;
-                color: red;
-                font-weight: 900;
-                float: right;
-              "
-            ></i>
-          </template>
+        <!--  -->
+        <el-table-column
+          label="二次供温设定(℃)"
+          prop="TE21SP"
+          width="140"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          label="二次供温(℃)"
+          prop="TE21"
+          width="120"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          label="二次回温(℃)"
+          prop="TE22"
+          width="120"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          label="二次回压设定(bar)"
+          prop="PT22SP_L"
+          width="150"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          label="二次供压(bar)"
+          prop="PT21"
+          width="120"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          label="二次回压(bar)"
+          prop="PT22"
+          width="120"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          label="1#循环泵(Hz)"
+          prop="BP21FB"
+          width="120"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          label="2#循环泵(Hz)"
+          prop="BP22FB"
+          width="120"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          label="1#调节阀(%)"
+          prop="FV1FB"
+          width="120"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          label="2#调节阀(%)"
+          prop="FV12FB"
+          width="120"
+          align="center"
+        >
         </el-table-column>
       </el-table>
     </div>
@@ -507,11 +156,12 @@ export default {
       dataListLoading: false,
       //斑马线颜色
       zebarCrossing: {
-        crossingOne: "#0dc41a",
-        crossingTwo: "#155f14",
+        crossingOne: "#F5F5F5",
+        crossingTwo: "#8BA9C3",
+        // crossingTwo: "#D8D8D9",F5F5F5
         //crossingTwo: "#224394",
-        colorOne: "#fff",
-        colorTwo: "#fff",
+        colorOne: "#000",
+        colorTwo: "#000",
       },
       selectID: [],
       station: "",
@@ -550,15 +200,17 @@ export default {
   computed: {
     headerStyle() {
       return {
-        background: "#0dc41a",
+        background: "#D8D8D9",
         padding: "5px 0",
-        height: "30px",
+        height: "60px",
         borderColor: "#006CC1",
         textAlign: "center",
         // color: "#FEFEFE",
-        fontSize: "14px",
-        color: "#fff",
-        borderColor: "black",
+        fontSize: "15px",
+        color: "#000",
+        fontweight: "900",
+        fontWeight: "900",
+        borderColor: "#000",
       };
     },
     // 斑马线的颜色
@@ -683,7 +335,7 @@ export default {
       //   return "height:5px!important;padding:0px!important;font-weight:bold;border-color:black!important; color:#0000ff!important; padding:0px!important; background:pink;";
       // }
 
-      return "height:4px!important;  padding:7px!important; ;color:#fff; font-family: 'Lao UI'; font-weight: 500;";
+      return "height:4px!important;  padding:11px!important; ;color:#000;font-size: 18px; font-family: 'Lao UI'; font-weight: 1000;    ";
     },
     //时间日期格式
     // dateFormat(row, column, cellValue, index) {
@@ -729,9 +381,9 @@ export default {
     tableRowClassName({ row, rowIndex }) {
       if (this.selectID.length == 0) {
         if ((rowIndex + 1) % 2 === 0) {
-          return "crossingOne"; //类名
+          return "crossingTwo"; //类名crossingOne
         } else {
-          return "crossingTwo"; //类名
+          return "crossingOne"; //类名crossingTwo
         }
       }
     },
@@ -1102,9 +754,9 @@ export default {
   // background-color: rgb(228, 226, 213);
   background: linear-gradient(
     90deg,
-    rgba(30, 224, 24, 0.4) 0,
+    rgba(212, 219, 212, 0.4) 0,
     rgba(0, 0, 0, 0.1) 50%,
-    rgba(30, 224, 24, 0.4)
+    rgba(214, 223, 214, 0.4)
   );
   position: relative;
   .condition-box {
@@ -1115,15 +767,15 @@ export default {
   }
   .table {
     position: absolute;
-    top: 50px;
-    width: 1880px;
-    height: 990px;
+    top: 10px;
+    width: 1920px;
+    height: 1000px;
     // background-color: palevioletred;
     overflow: auto;
-    margin: 0px 20px 20px 20px;
-    margin: 0px 20px 20px 20px;
+    margin: 0px 5px 5px 5px;
+    // margin: 0px 20px 20px 20px;
 
-    padding: 0px 20px 20px 20px;
+    // padding: 0px 20px 20px 20px;
     padding: 0px;
   }
 }

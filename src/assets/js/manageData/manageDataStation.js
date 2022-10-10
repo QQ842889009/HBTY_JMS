@@ -8,7 +8,7 @@ import that from "@/main.js"
 //import station from "assets/js/storeDataInit/station" //
 
 let stationData = (msg) => {
-  // console.log('---------msg',msg);
+  console.log("---------msg", msg)
   new Promise((resolve, reject) => {
     let msgJsObjFormat = {
       Sid: "000",
@@ -264,10 +264,10 @@ let stationData = (msg) => {
 
     msgJsObjFormat.TE22MP = msg.bd10.toFixed(1) //*
     msgJsObjFormat.TE12Z = msg.bd11.toFixed(1) //*
-    msgJsObjFormat.PT11 = msg.bd12.toFixed(1)
-    msgJsObjFormat.PT12 = msg.bd13.toFixed(1)
-    msgJsObjFormat.PT21 = msg.bd14.toFixed(1)
-    msgJsObjFormat.PT22 = msg.bd15.toFixed(1)
+    msgJsObjFormat.PT11 = msg.bd12.toFixed(2)
+    msgJsObjFormat.PT12 = msg.bd13.toFixed(2)
+    msgJsObjFormat.PT21 = msg.bd14.toFixed(2)
+    msgJsObjFormat.PT22 = msg.bd15.toFixed(2)
     msgJsObjFormat.PT11_FV = msg.bd16.toFixed(2)
     msgJsObjFormat.PT22BF = msg.bd17.toFixed(2)
     msgJsObjFormat.PT22BL = msg.bd18.toFixed(2)
@@ -369,13 +369,13 @@ let stationData = (msg) => {
     msgJsObjFormat.FV1SP_H = msg.bd91.toFixed(1)
     msgJsObjFormat.FV1SP_L = msg.bd92.toFixed(2)
     // msgJsObjFormat.PT22SP = msg.bd93.toFixed(0)
-    msgJsObjFormat.PT22SP_H = msg.bd94.toFixed(0)
-    msgJsObjFormat.PT22SP_L = msg.bd95.toFixed(0)
+    msgJsObjFormat.PT22SP_H = msg.bd94.toFixed(2)
+    msgJsObjFormat.PT22SP_L = msg.bd95.toFixed(2)
     msgJsObjFormat.PT22XY_H = msg.bd96.toFixed(1)
     msgJsObjFormat.PT22XY_L = msg.bd97.toFixed(1)
     // msgJsObjFormat.LTSP_H = msg.bd98.toFixed(2)
     // msgJsObjFormat.LTSP_L = msg.bd99.toFixed(1)
-    msgJsObjFormat.TE12SP_H = msg.bd100.toFixed(1)
+    msgJsObjFormat.TE12SP_H = msg.bd100.toFixed(2)
 
     msgJsObjFormat.FV_TEX = msg.bd101.toFixed(1)
     msgJsObjFormat.PT21_HH = msg.bd102.toFixed(1)

@@ -26,20 +26,28 @@
               <span slot="title">数据总览</span>
             </el-menu-item>
           </el-submenu>
-          <!-- <el-submenu index="工艺控制">
+          <el-submenu index="工艺控制">
             <template #title>
               <i class="iconfont icon-kongzhi"></i>
               <span slot="title" class="yy">工艺控制</span>
             </template>
-            <el-menu-item
+            <!-- <el-menu-item
               index="2"
               @click="$router.push({ name: 'Visual6' })"
               ref="ABC"
             >
               <i class="el-icon-menu"></i>
               <span slot="title">工艺控制</span>
+            </el-menu-item> -->
+            <el-menu-item
+              index="22"
+              @click="$router.push({ name: 'ProCtr' })"
+              ref="ABC"
+            >
+              <i class="el-icon-menu"></i>
+              <span slot="title">工艺控制2维</span>
             </el-menu-item>
-          </el-submenu> -->
+          </el-submenu>
           <!-- <el-submenu index="历史查询">
             <template #title>
               <i class="iconfont icon-icon_A3"></i>
@@ -269,9 +277,9 @@ export default {
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(30, 224, 24, 0.4) 0,
+    rgba(228, 233, 228, 0.4) 0,
     rgba(0, 0, 0, 0.1) 50%,
-    rgba(30, 224, 24, 0.4)
+    rgba(213, 219, 212, 0.4)
   );
   //background-color: rgb(218, 28, 28);
   // margin: 5rem;

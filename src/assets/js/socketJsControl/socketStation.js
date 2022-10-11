@@ -62,7 +62,7 @@ let socketOnData = (stompClient) => {
     })
 
     stompClient.subscribe("/data/wtOnPlcData", (msg) => {
-      console.log("--------plc的数据接收-----", JSON.parse(msg.body).map)
+      //console.log("--------plc的数据接收-----", JSON.parse(msg.body).map)
       // console.log("1****msg");
       // console.log(msg);
       // console.log(msg.body);

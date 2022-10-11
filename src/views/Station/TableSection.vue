@@ -98,15 +98,24 @@
           </template>
         </el-table-column>
         <el-table-column label="一次网" align="center">
-          <el-table-column prop="ft11" label="流量" width="120" align="center">
-            <!-- <template slot-scope="scope">
-              {{ scope.row.province | Sid }}
-            </template> -->
+          <el-table-column
+            prop="ft11"
+            label="供流量"
+            width="120"
+            align="center"
+          >
+          </el-table-column>
+          <el-table-column
+            prop="ft12"
+            label="回流量"
+            width="120"
+            align="center"
+          >
           </el-table-column>
           <el-table-column prop="q1" label="热量" width="120" align="center">
           </el-table-column>
           <el-table-column
-            prop="q1_sum"
+            prop="zq1"
             label="累计热量"
             width="100"
             align="center"
@@ -148,8 +157,22 @@
           >
           </el-table-column>
           <el-table-column
+            prop="te12z"
+            label="总回温(℃)"
+            width="120"
+            align="center"
+          >
+          </el-table-column>
+          <el-table-column
             prop="fv1fb"
-            label="阀门开度(%)"
+            label="1#阀门开度(%)"
+            width="120"
+            align="center"
+          >
+          </el-table-column>
+          <el-table-column
+            prop="fv12fb"
+            label="2#阀门开度(%)"
             width="120"
             align="center"
           >
@@ -157,9 +180,6 @@
         </el-table-column>
         <el-table-column label="二次网" align="center">
           <el-table-column prop="ft21" label="流量" width="120" align="center">
-            <!-- <template slot-scope="scope">
-              {{ scope.row.province | Sid }}
-            </template> -->
           </el-table-column>
 
           <el-table-column
@@ -325,6 +345,23 @@ export default {
 
         this.myParams
       );
+      if (this.myData.code == 500) {
+        // alert(this,myData.msg);
+        this.myData = [];
+        // console.log("=--------------",this.myData);
+        return alert("该时间段无数据");
+      } else {
+        // console.log("++++++++++++++++");
+        this.myData = this.myData.result;
+
+        //添加一个时间字段。格式为2022-9-5 16：05：34
+        // for (let index = 0; index < this.myData.length; index++) {
+        //   this.myData[index].SdateTime = getDate(this.myData[index].timestamp);
+        // }
+        // this.isUpdata++;
+      }
+      // this.myData = this.myData.reverse();
+      console.log("日报表接受到的数据", this.myData);
       // this.myData = this.myData.reverse();
       // console.log("日报表接受到的数据", this.myData);
 

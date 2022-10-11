@@ -37,7 +37,7 @@ export default {
       let myyear = new Date().getFullYear();
       let mymonth = new Date().getMonth() + 1;
       let mydate = new Date().getDate();
-      let mydatef = new Date().getDate() - 1;
+      let mydatef = new Date().getDate();
       //                 let myhh = new Date().getHours();
 
       let myhh =

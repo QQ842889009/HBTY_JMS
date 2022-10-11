@@ -8,7 +8,7 @@ import that from "@/main.js"
 //import station from "assets/js/storeDataInit/station" //
 
 let stationData = (msg) => {
-  console.log("---------msg", msg)
+  // console.log("---------msg", msg)
   new Promise((resolve, reject) => {
     let msgJsObjFormat = {
       Sid: "000",

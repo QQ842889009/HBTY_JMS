@@ -48,19 +48,19 @@
               <span slot="title">工艺控制2维</span>
             </el-menu-item>
           </el-submenu>
-          <!-- <el-submenu index="历史查询">
+          <el-submenu index="历史查询">
             <template #title>
               <i class="iconfont icon-icon_A3"></i>
               <span slot="title" class="yy">历史查询</span>
             </template>
-            <el-menu-item
+            <!-- <el-menu-item
               index="3"
               @click="$router.push({ name: 'Visual4' })"
               ref="ABC"
             >
               <i class="el-icon-menu"></i>
               <span slot="title">实时曲线</span>
-            </el-menu-item>
+            </el-menu-item> -->
             <el-menu-item
               index="4"
               @click="$router.push({ name: 'Visual5' })"
@@ -70,7 +70,7 @@
               <span slot="title">曲线查询</span>
             </el-menu-item>
           </el-submenu>
-          <el-submenu index="故障报警">
+          <!-- <el-submenu index="故障报警">
             <template #title>
               <i class="iconfont icon-guzhang"></i>
               <span slot="title" class="yy">故障报警</span>
@@ -99,7 +99,7 @@
               <i class="el-icon-menu"></i>
               <span slot="title">报警查询</span>
             </el-menu-item>
-          </el-submenu>
+          </el-submenu> -->
           <el-submenu index="报表系统">
             <template #title>
               <i class="iconfont icon-baobiao"></i>
@@ -122,7 +122,7 @@
               <span slot="title">区间报表</span>
             </el-menu-item>
           </el-submenu>
-          <el-submenu index="参数修改">
+          <!-- <el-submenu index="参数修改">
             <template #title>
               <i class="iconfont icon-jianyifankui"></i>
               <span slot="title" class="yy">参数修改</span>
@@ -135,8 +135,8 @@
               <i class="el-icon-menu"></i>
               <span slot="title">参数修改</span>
             </el-menu-item>
-          </el-submenu>
-          <el-submenu index="断线重连">
+          </el-submenu> -->
+          <!-- <el-submenu index="断线重连">
             <template #title>
               <i class="iconfont icon-yuanchengkongzhi"></i>
               <span slot="title" class="yy">断线重连</span>
@@ -149,8 +149,8 @@
               <i class="el-icon-menu"></i>
               <span slot="title">断线重连</span>
             </el-menu-item>
-          </el-submenu>
-          <el-submenu index="互锁设置">
+          </el-submenu> -->
+          <!-- <el-submenu index="互锁设置">
             <template #title>
               <i class="iconfont icon-jiesuo"></i>
               <span slot="title" class="yy">互锁设置</span>
